@@ -87,6 +87,7 @@ export default function Header({
           )}
           {[
             ["O nas", "/o-nas"],
+            ["Aktualności", "/aktualnosci"],
             ["Serwis i usługi", "/serwis"],
             ["Finansowanie", "/finansowanie"],
           ].map(([label, href]) => (

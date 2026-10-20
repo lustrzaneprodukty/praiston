@@ -50,21 +50,11 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </Link>
       <div className="product-copy">
-        <span className="product-code">
-          {product.brand || "PRAISTON / KATALOG"}
-        </span>
         <h3>
           <Link href={`/produkt/${product.slug}`}>{product.name}</Link>
         </h3>
-        <div className="product-details">
-          {product.specifications.slice(0, 2).map((s, i) => (
-            <span key={i}>
-              {s.label}: <strong>{s.value}</strong>
-            </span>
-          ))}
-        </div>
         <Link
-          className="inquiry-link"
+          className="button product-inquiry"
           href={`/zapytanie?produkt=${product.slug}`}
         >
           Zapytaj o produkt

@@ -70,3 +70,22 @@ Jednorazowe wejście dwóch linii nagłówka, opisu i przycisków z krótkim prz
 
 Nowy zasób: `public/images/medical-practice.png`, wygenerowany wbudowanym imagegen.
 Prompt: Premium editorial architectural photograph, wide landscape, contemporary outpatient medical examination room in Poland, inviting professional human-scale environment, blue upholstered examination couch on right, compact ultrasound machine beside it, doctor's desk on left, tall window with sheer light curtains, warm oak cabinetry, pale ivory walls, muted navy accents, one discreet plant, realistic practical equipment and cables, daylight, refined authentic interiors magazine photography, no people, no logos, no lettering, no watermark. A conceptual illustration for a medical equipment supplier, not an actual company facility. Beautiful balanced composition, warm welcoming atmosphere distinct from an operating theatre.
+
+
+## Pełna aktualizacja: historia firmy, aktualności i ostatnie poprawki
+- Wyraźne „35+ lat na rynku / od 1989 roku” na stronie głównej, w nagłówku i stopce.
+- Nowa podstrona O nas: historia Zenona Praisa, misja, specjalizacje, oferta nowego/rekondycjonowanego/powystawowego sprzętu, 8 reprezentowanych marek, usługi, przygotowanie techniczne i indywidualne zamówienia. Treść oparta na materiale przekazanym przez użytkownika.
+- Dane do faktury w stopce: Praiston Sp. z o.o., ul. Górowska 32, Leszno, NIP, REGON, KRS. Oddzielono je od adresu odwiedzin przy ul. Okrężnej 8.
+- Oryginalne znaki Rzetelna Firma, Złota Rzetelna Firma, BIG InfoMonitor i Firma Wiarygodna na pasie nad stopką. Nie regenerowano logotypów.
+- Nowa zakładka Aktualności i sekcja na stronie głównej: DOLMED.Tech 2026, Warsaw Medical Expo 2026, YESON i jubileusz EMALED. Oryginalne miniatury pobrano ze strony firmy. Daty wydarzeń nie są udawanymi datami publikacji. Zakończone wydarzenia i promocje są oznaczone; treści archiwalne zachowano.
+- Nowa ilustracja targów medycznych otwiera sekcję aktualności i prowadzi do pełnej zakładki. Ma oznaczenie wizualizacji poglądowej.
+- Kafelki produktów uproszczono: zdjęcie, status, nazwa i niebieski przycisk „Zapytaj o produkt”. Usunięto skrócone specyfikacje z kafelków; pełne dane produktów pozostają na ich stronach.
+- Mobilny hero dopasowany do pierwszego widoku (100svh minus pasek górny, menu i odstęp); na małych ekranach i przy powiększeniu tekstu może rosnąć, by nie ucinać treści.
+- Teksty pod nagłówkiem rozdzielone od pogrubień.
+- „Lepsza opieka.”: jednorazowy jasny refleks i animacja linii. Respektowane prefers-reduced-motion.
+
+Źródła: https://www.praiston.pl/pl/aktualnosci, https://www.praiston.pl/pl/o-nas, https://www.praiston.pl/pl/kontakt; treści i zrzuty użytkownika. Stan wyboru aktualności: 20.10.2026.
+
+Obraz: `public/images/medical-events.png`, wbudowany imagegen. Prompt: Wide cinematic editorial photograph for a medical equipment supplier's news section, modern European medical technology exhibition, small group of adult professionals in business attire talking in mid-distance beside an ultrasound machine and surgical lamp demonstration, elegant glass pavilion, navy and icy blue design accents, natural daylight, realistic restrained photography, people candid and not posing, ample quiet darker area on left for website text overlay, devices on right, no visible readable text, no company logos, no signs, no watermark, not depicting any named real event or real company booth. 3:2 landscape, polished professional imagery.
+
+Weryfikacja końcowa: TypeScript OK, 4/4 testy interakcji OK, wszystkie nowe zasoby i cztery trasy aktualności obecne. Bez weryfikacji przeglądarkowej oraz pełnego buildu produkcyjnego w tym środowisku.

@@ -2,6 +2,9 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { pages } from "@/lib/catalog";
 import FinanceContent from "@/components/finance-content";
+import { NewsIndex } from "@/components/news-section";
+import { latestNews } from "@/lib/news";
+import AboutContent from "@/components/about-content";
 import ContactContent from "@/components/contact-content";
 import { Breadcrumbs, Eyebrow, ContactBand } from "@/components/ui";
 const aliases: Record<string, string> = {
@@ -43,7 +46,10 @@ export default async function Content({
   const page = pages.find((p) => p.slug === (aliases[slug] || slug));
   if (!page) notFound();
   if (slug.startsWith("finansowanie")) return <FinanceContent slug={slug} />;
-  const news = slug === "aktualnosci";
+  if (slug === "o-nas") return <AboutContent />;
+  if (slug === "aktualnosci") return <NewsIndex />;
+  const newsItem = latestNews.find((n) => n.slug === slug);
+  const news = false;
   const articles = pages.filter((p) => p.sourceUrl.includes("/article/"));
   return (
     <>
@@ -140,6 +146,16 @@ export default async function Content({
               ))}
             </aside>
             <article className="prose">
+              {newsItem && (
+                <div className="article-status">
+                  <strong>{newsItem.status}</strong>
+                  <p>
+                    {newsItem.date}. Wpis archiwalny — zachowujemy treść
+                    oryginalnej publikacji.
+                  </p>
+                  <Link href="/aktualnosci">Wróć do aktualności</Link>
+                </div>
+              )}
               {(slug === "serwis" || slug === "zgloszenie-serwisowe") && (
                 <p>
                   <Link

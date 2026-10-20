@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { categories } from "@/lib/catalog";
 import Header from "@/components/header";
+import RecognitionBand from "@/components/recognition-band";
 import Footer from "@/components/footer";
 import "@fontsource-variable/manrope";
 import "./globals.css";
 import "./redesign.css";
 import "./refined.css";
 import "./symbols.css";
+import "./company.css";
 export const metadata: Metadata = {
   title: {
     default: "Praiston — technologia w służbie medycyny",
@@ -31,6 +33,7 @@ export default function RootLayout({
             .map(({ slug, name }) => ({ slug, name }))}
         />
         <main id="main">{children}</main>
+        <RecognitionBand />
         <Footer />
       </body>
     </html>

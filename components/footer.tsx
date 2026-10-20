@@ -65,6 +65,9 @@ export default function Footer() {
             Dla tych, którzy dbają o innych.
           </p>
           <span className="footer-company">Praiston Sp. z o.o.</span>
+          <span className="footer-experience">
+            35+ lat na rynku · od 1989 roku
+          </span>
         </div>
         <div>
           <h3>Wyposażenie</h3>
@@ -85,6 +88,27 @@ export default function Footer() {
           <Link href="/aktualnosci">Aktualności</Link>
           <Link href="/kontakt">Zespół i dane kontaktowe</Link>
         </div>
+      </div>
+      <div className="company-details">
+        <div>
+          <span>DANE FIRMY / DO FAKTURY</span>
+          <strong>Praiston Sp. z o.o.</strong>
+          <p>ul. Górowska 32, 64-100 Leszno, Polska</p>
+        </div>
+        <dl>
+          <div>
+            <dt>NIP</dt>
+            <dd>697-238-39-77</dd>
+          </div>
+          <div>
+            <dt>REGON</dt>
+            <dd>520320067</dd>
+          </div>
+          <div>
+            <dt>KRS</dt>
+            <dd>0000930089</dd>
+          </div>
+        </dl>
       </div>
       <div className="professional-note">
         Serwis przeznaczony dla profesjonalistów w dziedzinie wyrobów medycznych
