@@ -1,5 +1,25 @@
 # Raport realizacji — 20.10.2026
 
+## Aktualizacja UI: Blue edition
+
+- Pomarańczowe akcenty zastąpiono niebieskimi. Granatowy hero, jasne powierzchnie, zaokrąglone przyciski i karty.
+- Przebudowano hero, kategorie, prezentację producentów, sekcję współpracy i kontakt.
+- Banery producentów z małymi zdjęciami zastąpiono neutralną typograficzną listą rzeczywistych marek.
+- Naprawiono przyczynę wypychania opisu produktu: kolumny `minmax(0, …)`, `min-width: 0` galerii, ograniczona szerokość listy miniatur i układ jednokolumnowy do 800 px. Nie ukrywano poziomego overflow całej strony.
+- Zdjęcia zachowują proporcje i pełny kadr; ograniczono ich wielkość. Dane katalogowe i zdjęcia źródłowe zachowano.
+
+### Weryfikacja tej aktualizacji
+
+- `npm run typecheck`: poprawny wynik.
+- `npm run test:interactions`: 4/4 testy przeszły (katalog, zapytanie, galeria, menu).
+- Oba arkusze stylów poprawnie parsują się przez PostCSS.
+- Pełny build zablokowany błędem środowiska `ENOENT: uv_resident_set_memory` dla Turbopack i webpack przed zakończeniem kompilacji.
+- Brak dostępnego kontrolera przeglądarki: nie wykonano wizualnego testu szerokości ekranów ani screenshotów. Układ wymaga końcowego sprawdzenia w przeglądarce po lokalnym uruchomieniu.
+- Nie publikowano strony ani nie zmieniano hostingu.
+
+Poniższe sekcje opisują zastany katalog i wcześniejsze kontrole, a nie nową weryfikację po redesignie.
+
+
 ## Zakres danych
 
 | Pozycja | Liczba |
@@ -30,7 +50,7 @@ Wszystkie zapisane produkty mają kategorię, a wszystkie kategorie poprawne pow
 
 ## Projekt i funkcje
 
-Spójny frontend obejmuje stronę główną, katalog, podkategorie, wszystkie zapisane produkty, treści firmowe, usługi, aktualności, kontakt i 404. Kierunek wizualny: ciepła biel, grafit, pomarańczowy akcent, duża typografia Manrope i rzeczywiste zdjęcia sprzętu. Przestrzenna kompozycja hero jest wykonana w CSS, z ograniczeniem ruchu na urządzeniach dotykowych i przy prefers-reduced-motion.
+Spójny frontend obejmuje stronę główną, katalog, podkategorie, wszystkie zapisane produkty, treści firmowe, usługi, aktualności, kontakt i 404. Kierunek wizualny po aktualizacji: chłodna biel, granat i niebieski akcent, typografia Manrope i rzeczywiste zdjęcia sprzętu w ograniczonych rozmiarach. Szczegóły nowego UI i kontroli opisano na początku raportu.
 
 Działają wyszukiwanie rzeczywistych produktów, filtrowanie kategorii i stanu, sortowanie, dokładanie wyników, menu mobilne, galeria i powiększanie, akordeony oraz walidacja zapytania z produktem. Formularz nie wysyła wiadomości; pokazuje jednoznaczną informację i opcjonalne otwarcie programu pocztowego.
 

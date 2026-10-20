@@ -1,13 +1,13 @@
 @import "tailwindcss";
 @theme {
   --color-ink: #202b2b;
-  --color-accent: #ed653e;
+  --color-accent: #2463eb;
   --color-paper: #f7f7f2;
   --font-sans: "Manrope Variable", Arial, Helvetica, sans-serif;
 }
 :root {
   --ink: #202b2b;
-  --orange: #bf4525;
+  --accent: #245be0;
   --paper: #f7f7f2;
   --muted: #65706b;
   --line: #dedfd8;
@@ -70,11 +70,11 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #ae3c1c;
+  outline: 3px solid #245be0;
   outline-offset: 5px;
 }
 ::selection {
-  background: #ef9d7e;
+  background: #c5dcff;
   color: var(--ink);
 }
 .skip-link {
@@ -125,7 +125,7 @@ summary:focus-visible {
 }
 .logo-mark {
   font-size: 37px;
-  color: var(--orange);
+  color: var(--accent);
   margin-left: 3px;
   line-height: 1;
   transform: translateY(1px);
@@ -150,7 +150,7 @@ summary:focus-visible {
   right: 100%;
   bottom: 4px;
   height: 2px;
-  background: var(--orange);
+  background: var(--accent);
   transition: right 0.2s;
 }
 .main-nav > a:hover:after,
@@ -167,8 +167,8 @@ summary:focus-visible {
   justify-content: center;
   align-items: center;
   gap: 27px;
-  border: 1px solid var(--orange);
-  background: var(--orange);
+  border: 1px solid var(--accent);
+  background: var(--accent);
   color: #fff;
   padding: 18px 24px;
   font-size: 12px;
@@ -180,8 +180,8 @@ summary:focus-visible {
   line-height: 1.4;
 }
 .button:hover {
-  background: #c44b29;
-  border-color: #c44b29;
+  background: #1947b5;
+  border-color: #1947b5;
   transform: translateY(-2px);
 }
 .button.small {
@@ -255,7 +255,7 @@ summary:focus-visible {
 .eyebrow > span {
   height: 5px;
   width: 5px;
-  background: var(--orange);
+  background: var(--accent);
   display: inline-block;
 }
 .hero {
@@ -275,7 +275,7 @@ summary:focus-visible {
   margin: 30px 0 25px;
 }
 .hero h1 > span {
-  color: var(--orange);
+  color: var(--accent);
 }
 .hero-content > p {
   color: #5d6762;
@@ -299,7 +299,7 @@ summary:focus-visible {
   padding: 5px 0;
 }
 .text-link:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 .hero-footnote {
   margin-top: 53px;
@@ -313,7 +313,7 @@ summary:focus-visible {
 .tiny-line {
   width: 30px;
   height: 1px;
-  background: var(--orange);
+  background: var(--accent);
 }
 .hero-scene {
   background: #eeefe7;
@@ -408,7 +408,7 @@ summary:focus-visible {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--accent);
 }
 .hero-product-label {
   position: absolute;
@@ -441,8 +441,8 @@ summary:focus-visible {
 }
 .abstract-mark i {
   position: absolute;
-  background: var(--orange);
-  box-shadow: 18px 18px #b94725;
+  background: var(--accent);
+  box-shadow: 18px 18px #173e99;
   width: 100%;
   height: 33%;
   top: 33%;
@@ -619,9 +619,9 @@ summary:focus-visible {
   transition: background 0.2s;
 }
 .product-card:hover .card-arrow {
-  background: var(--orange);
+  background: var(--accent);
   color: white;
-  border-color: var(--orange);
+  border-color: var(--accent);
 }
 .product-copy {
   padding: 20px;
@@ -670,7 +670,7 @@ summary:focus-visible {
   margin-top: auto;
 }
 .inquiry-link:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 .image-missing {
   display: flex;
@@ -722,12 +722,12 @@ summary:focus-visible {
   width: 210px;
   height: 70px;
   top: 70px;
-  background: linear-gradient(150deg, #f79a72, #e26540);
-  box-shadow: 9px 15px 0 #a1492c;
+  background: linear-gradient(150deg, #80b8ff, #2463eb);
+  box-shadow: 9px 15px 0 #173e99;
 }
 .precision-cross i + i {
   transform: rotate(90deg);
-  box-shadow: 15px -9px 0 #ba5735;
+  box-shadow: 15px -9px 0 #1947b5;
 }
 .support-art > span {
   position: absolute;
@@ -763,7 +763,7 @@ summary:focus-visible {
   color: var(--muted);
 }
 .service-row:hover svg {
-  color: var(--orange);
+  color: var(--accent);
   transform: translate(3px, -3px);
 }
 .contact-band {
@@ -818,7 +818,7 @@ summary:focus-visible {
   margin: 6px 0 23px;
 }
 .footer-main a:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 .professional-note {
   margin-top: 45px;
@@ -859,7 +859,7 @@ summary:focus-visible {
   max-width: 600px;
 }
 .breadcrumbs a:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 .page-intro {
   padding: 40px 0 42px;
@@ -960,7 +960,7 @@ summary:focus-visible {
   color: #596651;
 }
 .radio-label input {
-  accent-color: var(--orange);
+  accent-color: var(--accent);
   width: 15px;
   height: 15px;
 }
@@ -1079,7 +1079,7 @@ summary:focus-visible {
 }
 .category-directory h2 > span {
   font-size: 10px;
-  color: var(--orange);
+  color: var(--accent);
 }
 .category-directory h2 a {
   display: flex;
@@ -1101,7 +1101,7 @@ summary:focus-visible {
   min-height: 60px;
 }
 .category-directory > div > a:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 .category-directory a small {
   margin-left: auto;
@@ -1112,7 +1112,7 @@ summary:focus-visible {
 }
 .product-hero {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 6vw;
   margin-top: 25px;
 }
@@ -1161,7 +1161,7 @@ summary:focus-visible {
   border: 1px solid var(--line);
 }
 .gallery-thumbs button.selected {
-  border-color: var(--orange);
+  border-color: var(--accent);
 }
 .gallery-thumbs img {
   width: 100%;
@@ -1234,11 +1234,11 @@ summary:focus-visible {
   white-space: nowrap;
 }
 .product-tabs a:hover {
-  box-shadow: inset 0 -2px var(--orange);
+  box-shadow: inset 0 -2px var(--accent);
 }
 .product-information {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 6vw;
   padding-top: 45px;
 }
@@ -1304,7 +1304,7 @@ summary:focus-visible {
   margin-top: 15px;
 }
 .source-detail a {
-  color: #b44322;
+  color: #245be0;
 }
 .related-section {
   margin-top: 75px;
@@ -1357,7 +1357,7 @@ summary:focus-visible {
   font-size: 13px;
 }
 .content-aside a.active {
-  color: var(--orange);
+  color: var(--accent);
 }
 .prose {
   max-width: 800px;
@@ -1463,7 +1463,7 @@ summary:focus-visible {
 }
 .checkbox-field input {
   margin-top: 3px;
-  accent-color: var(--orange);
+  accent-color: var(--accent);
   flex-shrink: 0;
 }
 .form-notice {
@@ -2365,7 +2365,7 @@ summary:focus-visible {
 }
 .department[open] summary span {
   transform: rotate(45deg);
-  color: var(--orange);
+  color: var(--accent);
 }
 .people-grid {
   display: grid;
@@ -2466,7 +2466,7 @@ summary:focus-visible {
 }
 .nav-offer-button:hover,
 .nav-offer-button[aria-expanded="true"] {
-  color: var(--orange);
+  color: var(--accent);
 }
 .offer-menu {
   position: absolute;
@@ -2652,7 +2652,7 @@ h3 {
   }
 }
 
-.hero h1 > span { color: #df613e; }
+.hero h1 > span { color: #245be0; }
 .product-code { font-size:9px; }
 .product-details { font-size:11px; }
 .condition { font-size:9px; }

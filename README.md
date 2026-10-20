@@ -103,7 +103,7 @@ Importer korzysta z publicznych linków, hierarchii kategorii i paginacji. Respe
 
 ## Kierunek wizualny i dostępność
 
-Ciepła biel, grafit, pomarańczowy akcent i lokalny Manrope. Układ oparty na typografii, dużych zdjęciach i prostych podziałach. CSS tworzy abstrakcyjną kompozycję przestrzenną; nie jest ona modelem urządzenia. Hero pokazuje prawdziwe zdjęcie produktu. Ruch wskaźnika jest wyłączony dla dotyku i `prefers-reduced-motion`.
+Granat, niebieskie akcenty, chłodna biel i lokalny Manrope. Zaokrąglone przyciski, karty i powierzchnie. Nowy hero z prawdziwym zdjęciem na białym tle, siatka nazw producentów i sekcja współpracy. Zdjęcia zachowują pełny kadr, a ich wielkość jest ograniczona. Wspólny system wizualny i poprawki responsywności: `app/redesign.css`, importowany po `app/globals.css`. Animacje respektują `prefers-reduced-motion`.
 
 Semantyczne nagłówki, etykiety pól, widoczny focus, skip link, natywny `dialog` galerii z Escape i przywróceniem focusu, akordeony `details`, responsywny układ i lokalne fonty. Wersja Preview ma `noindex` — przed osobnym wdrożeniem produkcyjnym należy świadomie ustawić indeksowanie i docelowe canonical URL.
 

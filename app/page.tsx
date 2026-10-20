@@ -82,31 +82,51 @@ export default function Home() {
           Poznaj Praiston <ArrowUpRight size={20} />
         </Link>
       </div>
-      <div className="brand-strip">
-        <span>MARKI W OFERCIE PRAISTON</span>
-        <div>
+      <section className="brand-section" aria-labelledby="brands-title">
+        <div className="brand-heading">
+          <div>
+            <Eyebrow>MARKI W NASZEJ OFERCIE</Eyebrow>
+            <h2 id="brands-title">
+              Dobre technologie.
+              <br />
+              Sprawdzeni producenci.
+            </h2>
+          </div>
+          <p>
+            Rozwiązania różnych marek.
+            <br />
+            Wsparcie jednego partnera.
+          </p>
+        </div>
+        <ul className="brand-grid">
           {brandAssets
             .filter((a) =>
-              /\/(emaled|nitrocare|wesseling|JorgSohn|seersmedical)\.png/.test(
+              /\/(emaled|nitrocare|wesseling|JorgSohn|seersmedical|uzumcu)\.png/.test(
                 a.sourceUrl,
               ),
             )
             .map((a) => (
-              <img
-                key={a.src}
-                src={a.src}
-                alt={a.alt}
-                width={a.width}
-                height={a.height}
-                loading="lazy"
-              />
+              <li key={a.src}>
+                <span className="brand-name">
+                  {(
+                    {
+                      emaled: "EMALED",
+                      nitrocare: "Nitrocare",
+                      wesseling: "Wesseling",
+                      JorgSohn: "Jörg & Sohn",
+                      seersmedical: "SEERS Medical",
+                      uzumcu: "Üzümcü",
+                    } as Record<string, string>
+                  )[a.alt] || a.alt}
+                </span>
+              </li>
             ))}
-        </div>
-      </div>
+        </ul>
+      </section>
       <section className="section offer-section">
         <div className="section-heading">
           <div>
-            <Eyebrow>01 / NASZA OFERTA</Eyebrow>
+            <Eyebrow>ZNAJDŹ SWÓJ SPRZĘT</Eyebrow>
             <h2>
               Twoja specjalizacja.
               <br />
@@ -148,7 +168,7 @@ export default function Home() {
       <section className="section product-section">
         <div className="section-heading">
           <div>
-            <Eyebrow>02 / WYBRANE Z KATALOGU</Eyebrow>
+            <Eyebrow>WYBRANE Z KATALOGU</Eyebrow>
             <h2>Przyjrzyj się możliwościom.</h2>
           </div>
           <Link className="button outline" href="/katalog">
@@ -162,15 +182,42 @@ export default function Home() {
         </div>
       </section>
       <section className="support-section">
-        <div className="support-art" aria-hidden="true">
-          <div className="precision-cross">
-            <i />
-            <i />
-          </div>
-          <span>PRAISTON / CARE & TECHNOLOGY</span>
+        <div className="support-story">
+          <span className="support-kicker">PRAISTON / TWÓJ PARTNER</span>
+          <h2>
+            Ty dbasz o ludzi.
+            <br />
+            <span>My o Twój sprzęt.</span>
+          </h2>
+          <ol className="support-steps">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Porozmawiajmy</h3>
+                <p>O Twojej placówce i jej potrzebach.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Znajdźmy rozwiązanie</h3>
+                <p>Sprzęt dopasowany do Twojej praktyki.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Pozostańmy w kontakcie</h3>
+                <p>Serwis i wsparcie po zakupie.</p>
+              </div>
+            </li>
+          </ol>
+          <Link href="/kontakt" className="text-link">
+            Zacznijmy od rozmowy <ArrowUpRight size={18} />
+          </Link>
         </div>
         <div className="support-copy">
-          <Eyebrow>03 / WIĘCEJ NIŻ SPRZĘT</Eyebrow>
+          <Eyebrow>WIĘCEJ NIŻ SPRZĘT</Eyebrow>
           <h2>
             Dobry partner.
             <br />
