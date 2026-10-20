@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ShieldCheck, Wrench, Activity } from "lucide-react";
 import { categories, featuredProducts } from "@/lib/catalog";
-import { Eyebrow, ProductCard, ContactBand } from "@/components/ui";
+import { Eyebrow, ProductCard } from "@/components/ui";
 import VisualSymbol, { categorySymbols } from "@/components/visual-symbol";
+import PracticeSection from "@/components/practice-section";
 import Hero from "@/components/hero";
 import { EditorialSections } from "@/components/editorial";
 import brandAssets from "@/data/brand-assets.json";
@@ -24,7 +25,9 @@ export default function Home() {
           <Eyebrow>SPRZĘT. WIEDZA. WSPARCIE.</Eyebrow>
           <h1>
             <span className="headline-line">Więcej możliwości.</span>{" "}
-            <span className="headline-line headline-accent">Lepsza opieka.</span>
+            <span className="headline-line headline-accent">
+              Lepsza opieka.
+            </span>
           </h1>
           <p>
             Nowy i rekondycjonowany sprzęt medyczny. Wyposażenie i wsparcie dla
@@ -163,6 +166,7 @@ export default function Home() {
           Zobacz wszystkie specjalizacje
         </Link>
       </section>
+      <PracticeSection />
       <section className="section product-section">
         <div className="section-heading">
           <div>
@@ -262,7 +266,6 @@ export default function Home() {
         </div>
       </section>
       <EditorialSections />
-      <ContactBand />
     </>
   );
 }

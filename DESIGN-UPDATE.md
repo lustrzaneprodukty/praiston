@@ -58,3 +58,15 @@ Prompt: Create a precisely arranged sprite sheet of SEVEN separate premium 3D cl
 
 ## Animacja nagłówka
 Jednorazowe wejście dwóch linii nagłówka, opisu i przycisków z krótkim przesunięciem oraz delikatne przybliżenie zdjęcia (2,5%). Bez zapętlenia, dodatkowego JavaScript i zmian wysokości sekcji. Przy prefers-reduced-motion animacje są wyłączone. TypeScript: OK; podgląd przeglądarkowy nadal niezweryfikowany.
+
+
+## Sekcja gabinetu i dopracowana stopka
+- Dodano sekcję „Twój gabinet. Wszystko na swoim miejscu.” z wygenerowanym wnętrzem i linkami do wyszukiwania USG, foteli oraz lamp.
+- Obraz jest oznaczony jako wizualizacja poglądowa; nie jest przedstawiany jako realizacja Praiston.
+- Nowa granatowa stopka: trzy karty telefonu, e-maila i adresu z ikonami, odnośnik do zespołu, uporządkowane kolumny nawigacyjne i dane firmy. Dane pochodzą z istniejącego projektu.
+- Usunięto z głównej strony dodatkowy ContactBand bezpośrednio nad stopką, aby nie powielać wezwania do kontaktu.
+- Układy responsywne: na telefonie sekcja gabinetu i dane kontaktowe ustawiają się w jednej kolumnie.
+- TypeScript: OK. Istniejące testy interakcji: 4/4 OK. Brak weryfikacji przeglądarkowej i potwierdzonego buildu produkcyjnego — ograniczenia środowiska jak wyżej.
+
+Nowy zasób: `public/images/medical-practice.png`, wygenerowany wbudowanym imagegen.
+Prompt: Premium editorial architectural photograph, wide landscape, contemporary outpatient medical examination room in Poland, inviting professional human-scale environment, blue upholstered examination couch on right, compact ultrasound machine beside it, doctor's desk on left, tall window with sheer light curtains, warm oak cabinetry, pale ivory walls, muted navy accents, one discreet plant, realistic practical equipment and cables, daylight, refined authentic interiors magazine photography, no people, no logos, no lettering, no watermark. A conceptual illustration for a medical equipment supplier, not an actual company facility. Beautiful balanced composition, warm welcoming atmosphere distinct from an operating theatre.
