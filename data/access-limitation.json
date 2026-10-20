@@ -1,0 +1,7 @@
+{
+  "reason": "Subsequent source requests failed with Tunnel connection failed: 403 Forbidden. Further media acquisition stopped; no bypass attempted.",
+  "recordedAt": "2026-10-20T09:13:48.250669+00:00",
+  "productsAtCheckpoint": 2459,
+  "failuresAtCheckpoint": 119,
+  "pendingScopeFile": "discovered-urls.json"
+}

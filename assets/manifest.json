@@ -1,0 +1,20 @@
+[
+  {
+    "file": "catalog-media-000.json.gz",
+    "files": 2570,
+    "bytes": 8606599,
+    "sha256": "47d27250e99dc67e8829ffe495fc7f24dac20831452960296ae497b6e4975672"
+  },
+  {
+    "file": "catalog-media-001.json.gz",
+    "files": 2490,
+    "bytes": 8601583,
+    "sha256": "2c829081ef09a02d252494f26b2ca8e1af591627070230a6e9c709588a40015c"
+  },
+  {
+    "file": "catalog-media-002.json.gz",
+    "files": 513,
+    "bytes": 1737357,
+    "sha256": "bf89696e4bea6c6718acdb46e880a425445bc253b2b1e1cf5d5f607019ee30e9"
+  }
+]
