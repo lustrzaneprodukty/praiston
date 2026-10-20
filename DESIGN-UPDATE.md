@@ -28,3 +28,33 @@ Wygenerowano wbudowanym imagegen; obrazy znajdują się w `public/images/medical
 Prompty:
 1. Use case: photorealistic-natural. Create a premium architectural editorial photograph for a Polish medical equipment company's website hero. Wide landscape 3:2 composition, modern empty operating room, a beautifully detailed surgical LED light in upper right foreground, blue upholstered operating table lower right, medical monitor and stainless steel trolley, glass partitions, soft daylight from left, deep navy and clean pale blue palette, realistic sophisticated hospital interior. Left third relatively quiet. No people, no text, no logos, no watermark. This is an illustrative environment not a specific product advertisement.
 2. Use case photorealistic-natural. Wide premium editorial photograph for medical equipment supplier service page. A professional biomedical technician in navy workwear carefully inspecting an ultrasound console in a bright contemporary workshop, realistic hands, no patient, no treatment, tidy equipment, natural window light, warm human detail balanced with cool blue and white interior, authentic candid photography, medium wide composition, no text, no logos, no watermark.
+
+
+## Aktualizacja: symbole i podpis logo
+- Pod logo w nagłówku i stopce dodano mały podpis „Medical Equipment”.
+- Zdjęcia w kafelkach specjalizacji zastąpiono spójnymi symbolami 3D: stetoskop, ząb, łapa i fotel medyczny.
+- Każda specjalizacja ma własny stonowany kolor, krótki opis oraz animację symbolu i linii akcentowej przy najechaniu lub fokusie klawiatury.
+- Serwis, finansowanie i skup sprzętu otrzymały osobne karty z symbolami klucza, portfela i urządzenia w dłoniach.
+- Symbole pojawiają się też w katalogu kategorii. Dekoracje są ukryte przed czytnikami ekranu; nazwy pozostają zwykłym tekstem.
+- Dodano dyskretne akcenty do sekcji wyboru sprzętu i nagłówka specjalizacji.
+- Animacje respektują prefers-reduced-motion; na urządzeniach dotykowych nie uruchamia się efekt hover.
+- TypeScript: OK. Istniejące testy interakcji: 4/4 OK. Nie wykonano nowego pełnego buildu ani kontroli w przeglądarce; ograniczenia opisane powyżej pozostają aktualne.
+
+### Nowy zasób
+`public/images/praiston-symbols.png`: pojedynczy przezroczysty arkusz siedmiu symboli, wygenerowany wbudowanym imagegen. Poszczególne symbole są wyświetlane przez pozycjonowanie tła CSS bez dodatkowej biblioteki i JavaScript.
+
+Prompt: Create a precisely arranged sprite sheet of SEVEN separate premium 3D clay-and-frosted-glass pictograms for a sophisticated medical equipment website. Transparent background. Canvas landscape 2:1 ratio, exact regular grid 4 columns and 2 rows, eight equally sized square cells, no visible dividers. Each icon centered, same scale, clear padding. Top row: blue stethoscope forming a heart curve; ivory molar tooth with blue base; teal paw; medical examination couch with blue padding and white base. Bottom row: blue and silver wrench with gear; blue wallet with two silver coins; blue cupped hands cradling medical equipment; last cell empty. Consistent three-quarter camera, soft studio illumination, cobalt, sky blue, teal, white and silver. No text, logos, arrows, stars or background tiles.
+
+
+## Aktualizacja responsywności po zrzutach mobilnych
+- Hero desktop: mniejsza wysokość i spokojniejsze proporcje tekstu do zdjęcia.
+- Hero mobile: wysokość automatyczna, krótszy opis, usunięta dodatkowa karta i pusta przestrzeń, dwa przyciski o równej wysokości. Na najwęższych ekranach przyciski układają się jeden pod drugim.
+- Kategorie mobile: jeden zwarty poziomy kafelek w rzędzie, symbol po lewej i tekst po prawej; bez rozrywania słów w nazwach.
+- Kategorie desktop: wspólne wysokości obszarów i linki przy dolnej krawędzi.
+- Karty produktów: uporządkowane zdjęcia, czytelniejsze tytuły, spójne odstępy i dolne linki. Na telefonach jedna pełna kolumna bez ściskania nazw i przycinania tytułów.
+- Zachowano symbole i podpis Medical Equipment z poprzedniej aktualizacji. Dostarczone zrzuty przedstawiały starszą wersję bez tych elementów.
+- TypeScript po zmianach: OK. Zmiany dotyczą układu i treści; wcześniejsze testy interakcji 4/4 OK. Nie potwierdzono wyglądu w przeglądarce ani pełnego buildu produkcyjnego w tym środowisku.
+
+
+## Animacja nagłówka
+Jednorazowe wejście dwóch linii nagłówka, opisu i przycisków z krótkim przesunięciem oraz delikatne przybliżenie zdjęcia (2,5%). Bez zapętlenia, dodatkowego JavaScript i zmian wysokości sekcji. Przy prefers-reduced-motion animacje są wyłączone. TypeScript: OK; podgląd przeglądarkowy nadal niezweryfikowany.

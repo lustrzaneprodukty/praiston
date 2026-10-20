@@ -1,22 +1,14 @@
 import Link from "next/link";
-import {
-  ShieldCheck,
-  Wrench,
-  Activity,
-  ScanLine,
-  Armchair,
-  Stethoscope,
-  HeartPulse,
-} from "lucide-react";
-import { categories, categoryProducts, featuredProducts } from "@/lib/catalog";
+import { ShieldCheck, Wrench, Activity } from "lucide-react";
+import { categories, featuredProducts } from "@/lib/catalog";
 import { Eyebrow, ProductCard, ContactBand } from "@/components/ui";
+import VisualSymbol, { categorySymbols } from "@/components/visual-symbol";
 import Hero from "@/components/hero";
 import { EditorialSections } from "@/components/editorial";
 import brandAssets from "@/data/brand-assets.json";
 export default function Home() {
   const featured = featuredProducts();
   const roots = categories.filter((c) => !c.parentId);
-  const icons = [Stethoscope, ScanLine, HeartPulse, Armchair];
   return (
     <>
       <section className="hero photo-hero">
@@ -31,19 +23,18 @@ export default function Home() {
         <div className="hero-content">
           <Eyebrow>SPRZĘT. WIEDZA. WSPARCIE.</Eyebrow>
           <h1>
-            Więcej możliwości.
-            <br />
-            <span>Lepsza opieka.</span>
+            <span className="headline-line">Więcej możliwości.</span>{" "}
+            <span className="headline-line headline-accent">Lepsza opieka.</span>
           </h1>
           <p>
-            Wyposażenie, które pomaga Ci robić to, co najważniejsze. Poznaj nowy
-            i rekondycjonowany sprzęt medyczny — od gabinetu po salę operacyjną.
+            Nowy i rekondycjonowany sprzęt medyczny. Wyposażenie i wsparcie dla
+            Twojego gabinetu.
           </p>
           <div className="hero-buttons">
             <Link className="button" href="/katalog">
               Odkryj naszą ofertę
             </Link>
-            <Link className="text-link" href="/kontakt">
+            <Link className="button hero-secondary" href="/kontakt">
               Porozmawiajmy
             </Link>
           </div>
@@ -139,43 +130,31 @@ export default function Home() {
         </div>
         <div className="category-grid">
           {roots.slice(0, 4).map((c, i) => {
-            const Icon = icons[i % 4];
+            const symbol = categorySymbols[i];
             return (
               <Link
-                className="category-tile"
+                className={`category-tile specialty-tile specialty-${symbol}`}
                 key={c.id}
                 href={`/kategorie/${c.slug}`}
               >
                 <div className="category-top">
                   <span>0{i + 1}</span>
                 </div>
-                {(() => {
-                  const options = categoryProducts(c.id);
-                  const preferred = [
-                    /fotel.*teyco/i,
-                    /lampa do wybielania/i,
-                    /stół weterynaryjny/i,
-                    /taboret/i,
-                  ][i];
-                  const sample =
-                    options.find(
-                      (p) => p.images[0]?.src && preferred.test(p.name),
-                    ) || options.find((p) => p.images[0]?.src);
-                  return sample ? (
-                    <img
-                      className="category-product"
-                      src={sample.images[0].src}
-                      alt=""
-                      width="240"
-                      height="180"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <Icon className="category-icon" strokeWidth={1} />
-                  );
-                })()}
+                <div className="specialty-art">
+                  <VisualSymbol name={symbol} />
+                </div>
                 <h3>{c.name}</h3>
-                <span className="category-foot">Odkryj kategorię</span>
+                <p className="specialty-description">
+                  {
+                    [
+                      "Diagnostyka, zabiegi i codzienna opieka.",
+                      "Wyposażenie Twojego gabinetu stomatologicznego.",
+                      "Technologia dla małych i dużych pacjentów.",
+                      "Komfort i ergonomia w Twojej placówce.",
+                    ][i]
+                  }
+                </p>
+                <span className="category-foot">Poznaj ofertę</span>
               </Link>
             );
           })}
@@ -262,11 +241,21 @@ export default function Home() {
               "Porozmawiajmy o Twoim wyposażeniu.",
               "/skup-sprzetu",
             ],
-          ].map(([name, desc, url]) => (
-            <Link className="service-row" key={url} href={url}>
+          ].map(([name, desc, url], i) => (
+            <Link
+              className={`service-row service-card service-tone-${i}`}
+              key={url}
+              href={url}
+            >
+              <span className="service-art">
+                <VisualSymbol
+                  name={(["service", "finance", "buyback"] as const)[i]}
+                />
+              </span>
               <div>
                 <h3>{name}</h3>
                 <span>{desc}</span>
+                <small className="service-action">Poznaj możliwości</small>
               </div>
             </Link>
           ))}

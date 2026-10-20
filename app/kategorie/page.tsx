@@ -1,3 +1,4 @@
+import VisualSymbol, { categorySymbols } from "@/components/visual-symbol";
 import Link from "next/link";
 import { categories, categoryProducts } from "@/lib/catalog";
 import { Breadcrumbs, Eyebrow } from "@/components/ui";
@@ -16,10 +17,10 @@ export default function Categories() {
         .map((root, i) => (
           <section key={root.id} className="category-directory">
             <h2>
-              <span>0{i + 1}</span>
-              <Link href={`/kategorie/${root.slug}`}>
-                {root.name} 
-              </Link>
+              <VisualSymbol
+                name={categorySymbols[i % categorySymbols.length]}
+              />
+              <Link href={`/kategorie/${root.slug}`}>{root.name}</Link>
             </h2>
             <div>
               {categories
@@ -28,7 +29,6 @@ export default function Categories() {
                   <Link key={c.id} href={`/kategorie/${c.slug}`}>
                     <span>{c.name}</span>
                     <small>{categoryProducts(c.id).length}</small>
-                    
                   </Link>
                 ))}
             </div>

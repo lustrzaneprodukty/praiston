@@ -4,7 +4,12 @@ import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 export function Logo() {
-  return <span className="logo">praiston</span>;
+  return (
+    <span className="logo-lockup">
+      <span className="logo">praiston</span>
+      <span className="logo-tagline">Medical Equipment</span>
+    </span>
+  );
 }
 export default function Header({
   categories = [],

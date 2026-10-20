@@ -6,6 +6,7 @@ import "@fontsource-variable/manrope";
 import "./globals.css";
 import "./redesign.css";
 import "./refined.css";
+import "./symbols.css";
 export const metadata: Metadata = {
   title: {
     default: "Praiston — technologia w służbie medycyny",
