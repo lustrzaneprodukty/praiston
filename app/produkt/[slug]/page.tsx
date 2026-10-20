@@ -92,7 +92,7 @@ export default async function ProductPage({
             p.description.map((text, i) => <p key={i}>{text}</p>)
           ) : (
             <p>
-              Opis nie jest dostępny w pobranych materiałach. Skontaktuj się z
+              Szczegółowy opis jest dostępny u naszego zespołu. Skontaktuj się z
               nami, aby uzyskać szczegóły.
             </p>
           )}
@@ -111,8 +111,7 @@ export default async function ProductPage({
               </dl>
             ) : (
               <p>
-                Brak wyodrębnionej tabeli parametrów w źródle. Szczegóły
-                dostępne w opisie urządzenia.
+                Zapytaj nas o pełne parametry techniczne i dostępne konfiguracje urządzenia.
               </p>
             )}
           </section>
@@ -134,7 +133,7 @@ export default async function ProductPage({
                 </a>
               ))
             ) : (
-              <p>Do tego produktu nie udostępniono lokalnych dokumentów.</p>
+              <p>Potrzebujesz instrukcji lub karty technicznej? Poproś nas o dokumentację tego urządzenia.</p>
             )}
           </section>
           <details className="source-detail">

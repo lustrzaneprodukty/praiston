@@ -1,5 +1,6 @@
 "use client";
 import { useDeferredValue, useMemo, useState, useEffect } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   Search,
@@ -102,11 +103,13 @@ export default function CatalogBrowser({
         className="button outline filter-toggle"
         onClick={() => setFiltersOpen(!filtersOpen)}
         aria-expanded={filtersOpen}
+        aria-controls="catalog-filters"
       >
         <SlidersHorizontal size={18} /> Filtry{" "}
         {category || condition ? "•" : ""}
       </button>
       <aside
+        id="catalog-filters"
         className={`filters ${filtersOpen ? "show-filters" : ""}`}
         aria-label="Filtry katalogu"
       >
@@ -215,7 +218,8 @@ export default function CatalogBrowser({
           <div className="empty-state">
             <Search size={40} strokeWidth={1} />
             <h2>Nie znaleźliśmy takiego sprzętu.</h2>
-            <p>Sprawdź pisownię lub wybierz szerszą kategorię.</p>
+            <p>Sprawdź pisownię lub wybierz szerszą kategorię. Możemy też pomóc znaleźć urządzenie spoza katalogu.</p>
+            <Link className="button outline empty-inquiry" href={`/zapytanie?temat=${encodeURIComponent(query.trim() ? "Poszukuję sprzętu: " + query.trim() : "Pomoc w doborze sprzętu")}`}>Zapytaj o poszukiwany sprzęt</Link>
             <button className="button" onClick={reset}>
               Wyczyść filtry
             </button>

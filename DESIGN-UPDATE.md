@@ -89,3 +89,21 @@ Prompt: Premium editorial architectural photograph, wide landscape, contemporary
 Obraz: `public/images/medical-events.png`, wbudowany imagegen. Prompt: Wide cinematic editorial photograph for a medical equipment supplier's news section, modern European medical technology exhibition, small group of adult professionals in business attire talking in mid-distance beside an ultrasound machine and surgical lamp demonstration, elegant glass pavilion, navy and icy blue design accents, natural daylight, realistic restrained photography, people candid and not posing, ample quiet darker area on left for website text overlay, devices on right, no visible readable text, no company logos, no signs, no watermark, not depicting any named real event or real company booth. 3:2 landscape, polished professional imagery.
 
 Weryfikacja końcowa: TypeScript OK, 4/4 testy interakcji OK, wszystkie nowe zasoby i cztery trasy aktualności obecne. Bez weryfikacji przeglądarkowej oraz pełnego buildu produkcyjnego w tym środowisku.
+
+
+## Audyt klienta i poprawki funkcjonalne
+Pełne ustalenia i priorytety: AUDYT-UX.md. Naprawiono przekazywanie telefonu i placówki w zapytaniu, dodano kontakt z pustych wyników katalogu, powiązano przycisk filtrów z panelem i poprawiono komunikaty na stronach produktów. TypeScript i 4 rozszerzone testy interakcji: OK. Bez weryfikacji przeglądarkowej ani produkcyjnego buildu.
+
+
+## Usunięcie górnego paska i niekompletnych produktów
+- Usunięto pasek ponad logo na wszystkich ekranach.
+- Mobilne hero uwzględnia teraz wysokość samego nagłówka (76 px) oraz odstęp 10 px.
+- Ukryto 1204 produkty bez zdjęć we wszystkich widokach korzystających z katalogu, również w wyborze produktu w formularzu. Widoczne pozostaje 1255 produktów.
+- Oryginalne rekordy zachowano w data/products.json; po dodaniu zdjęć ponownie pojawią się w katalogu. Wszystkie lokalne zdjęcia widocznych produktów istnieją.
+
+
+## Układ sekcji i ekspozycja produktów
+- Kolejność końca strony głównej: Aktualności → FAQ → firma rodzinna / 35+ lat → wyróżnienia → stopka.
+- Blok doświadczenia ma niebieski panel liczby, wspólne osie wyrównania i jednokolumnowy, wyśrodkowany układ mobilny.
+- Białe tło zdjęć w kartach produktów, galerii i miniaturach; zachowane oryginalne zdjęcia i kolory sprzętu.
+- Bez publikacji online. Weryfikacja wizualna w przeglądarce pozostaje do wykonania.

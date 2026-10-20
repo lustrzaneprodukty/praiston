@@ -6,7 +6,7 @@ import VisualSymbol, { categorySymbols } from "@/components/visual-symbol";
 import PracticeSection from "@/components/practice-section";
 import NewsSection from "@/components/news-section";
 import Hero from "@/components/hero";
-import { EditorialSections } from "@/components/editorial";
+import { EditorialSections, FaqSection } from "@/components/editorial";
 import brandAssets from "@/data/brand-assets.json";
 export default function Home() {
   const featured = featuredProducts();
@@ -72,23 +72,7 @@ export default function Home() {
         </div>
         <Link href="/o-nas">Poznaj Praiston</Link>
       </div>
-      <section className="experience-band" aria-label="Doświadczenie Praiston">
-        <div className="experience-number">
-          35<span>+</span>
-          <small>LAT NA RYNKU</small>
-        </div>
-        <div>
-          <span>RODZINNA FIRMA. OD 1989 ROKU.</span>
-          <h2>
-            Doświadczenie, które
-            <br />
-            pracuje dla Twojej placówki.
-          </h2>
-        </div>
-        <Link href="/o-nas" className="button outline">
-          Poznaj naszą historię
-        </Link>
-      </section>
+
       <section className="brand-section" aria-labelledby="brands-title">
         <div className="brand-heading">
           <div>
@@ -282,6 +266,20 @@ export default function Home() {
       </section>
       <EditorialSections />
       <NewsSection />
+      <FaqSection />
+      <section className="experience-band" aria-label="Doświadczenie Praiston">
+        <div className="experience-number">
+          <strong>35<span>+</span></strong>
+          <small>LAT NA RYNKU</small>
+        </div>
+        <div>
+          <span>RODZINNA FIRMA. OD 1989 ROKU.</span>
+          <h2>Doświadczenie, które pracuje dla Twojej placówki.</h2>
+        </div>
+        <Link href="/o-nas" className="button outline">
+          Poznaj naszą historię
+        </Link>
+      </section>
     </>
   );
 }

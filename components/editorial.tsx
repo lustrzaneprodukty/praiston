@@ -100,6 +100,13 @@ export function EditorialSections() {
           Poznaj możliwości finansowania
         </Link>
       </section>
+
+    </>
+  );
+}
+
+export function FaqSection() {
+  return (
       <section className="faq-section section">
         <div>
           <Eyebrow>WARTO WIEDZIEĆ</Eyebrow>
@@ -143,6 +150,5 @@ export function EditorialSections() {
           ))}
         </div>
       </section>
-    </>
   );
 }

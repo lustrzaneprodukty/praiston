@@ -27,10 +27,6 @@ export default function Header({
   const pathname = usePathname();
   return (
     <>
-      <div className="topbar">
-        <span>Sprzęt medyczny. Nowy i rekondycjonowany.</span>
-        <a href="tel:+48655270167">Porozmawiajmy: +48 65 527 01 67</a>
-      </div>
       <header
         className="header"
         onKeyDown={(e) => {

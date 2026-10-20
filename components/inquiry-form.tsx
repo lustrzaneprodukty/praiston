@@ -15,6 +15,8 @@ export default function InquiryForm({
   const [result, setResult] = useState<{
     name: string;
     email: string;
+    phone: string;
+    company: string;
     message: string;
   } | null>(null);
   const [error, setError] = useState("");
@@ -59,6 +61,8 @@ export default function InquiryForm({
           setResult({
             name: String(data.get("name")),
             email: String(data.get("email")),
+            phone: String(data.get("phone") || "").trim(),
+            company: String(data.get("company") || "").trim(),
             message: String(data.get("message")),
           });
         }}
@@ -149,11 +153,13 @@ export default function InquiryForm({
             <p>
               {result.name} · {result.email}
             </p>
+            {result.phone && <p>Telefon: {result.phone}</p>}
+            {result.company && <p>Placówka: {result.company}</p>}
             <p>Temat: {product}</p>
             <p style={{ whiteSpace: "pre-wrap" }}>{result.message}</p>
             <a
               className="button outline"
-              href={`mailto:biuro@praiston.pl?subject=${encodeURIComponent("Zapytanie: " + product)}&body=${encodeURIComponent(result.message + "\n\n" + result.name + "\n" + result.email)}`}
+              href={`mailto:biuro@praiston.pl?subject=${encodeURIComponent("Zapytanie: " + product)}&body=${encodeURIComponent([result.message, "", "Temat: " + product, "Imię i nazwisko: " + result.name, "E-mail: " + result.email, result.phone ? "Telefon: " + result.phone : "", result.company ? "Placówka: " + result.company : ""].filter((line) => line !== "").join("\n"))}`}
             >
               Otwórz w swojej poczcie 
             </a>

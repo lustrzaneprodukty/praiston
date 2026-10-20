@@ -3,7 +3,11 @@ import rawProducts from "@/data/products.json";
 import rawCategories from "@/data/categories.json";
 import rawPages from "@/data/pages.json";
 import type { Product, Category, ContentPage } from "./types";
+// Keep incomplete records in the source data, but hide them from the public catalog.
 export const products = (rawProducts as Product[]).map((p) => ({
+  ...p,
+  images: p.images.filter((image) => image.src.trim().length > 0),
+})).filter((p) => p.images.length > 0).map((p) => ({
   ...p,
   slug: p.slug.endsWith("-" + p.id) ? p.slug : p.slug + "-" + p.id,
 }));

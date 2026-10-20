@@ -56,6 +56,8 @@ test("catalog searches real records, sorts, resets and displays empty state", as
   const search = ui.getByRole("textbox", { name: "Szukaj w katalogu" });
   await user.type(search, "__nieistniejacy_7f428c");
   await waitFor(() => assert(ui.getByText("Nie znaleźliśmy takiego sprzętu.")));
+  const inquiryLink = ui.getByRole("link", { name: "Zapytaj o poszukiwany sprzęt" }).getAttribute("href") || "";
+  assert(decodeURIComponent(inquiryLink).includes("__nieistniejacy_7f428c"));
   await user.click(ui.getAllByRole("button", { name: "Wyczyść filtry" })[0]);
   await waitFor(() =>
     assert(ui.container.querySelectorAll(".product-card").length > 0),
@@ -101,6 +103,8 @@ test("inquiry preselects product, validates and clearly does not send", async ()
     ui.getByLabelText("Treść zapytania *"),
     "Proszę o ofertę tego urządzenia.",
   );
+  await user.type(ui.getByLabelText("Telefon"), "123456789");
+  await user.type(ui.getByLabelText("Nazwa placówki"), "Gabinet Testowy");
   await user.click(ui.getByRole("checkbox"));
   await user.click(
     ui.getByRole("button", { name: "Przygotuj podsumowanie zapytania" }),
@@ -118,6 +122,9 @@ test("inquiry preselects product, validates and clearly does not send", async ()
       .getAttribute("href")
       ?.startsWith("mailto:"),
   );
+  const emailDraft = decodeURIComponent(ui.getByRole("link", { name: "Otwórz w swojej poczcie" }).getAttribute("href") || "");
+  assert(emailDraft.includes("Telefon: 123456789"));
+  assert(emailDraft.includes("Placówka: Gabinet Testowy"));
   await user.type(ui.getByLabelText("Treść zapytania *"), " Dziękuję.");
   assert.equal(ui.queryByRole("status"), null);
 });
