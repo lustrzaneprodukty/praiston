@@ -73,6 +73,22 @@ export default function Home() {
         <Link href="/o-nas">Poznaj Praiston</Link>
       </div>
 
+      <section className="section product-section">
+        <div className="section-heading">
+          <div>
+            <Eyebrow>WYBRANE Z KATALOGU</Eyebrow>
+            <h2>Przyjrzyj się możliwościom.</h2>
+          </div>
+          <Link className="button outline" href="/katalog">
+            Cały katalog
+          </Link>
+        </div>
+        <div className="product-grid">
+          {featured.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
+      </section>
       <section className="brand-section" aria-labelledby="brands-title">
         <div className="brand-heading">
           <div>
@@ -165,23 +181,20 @@ export default function Home() {
           Zobacz wszystkie specjalizacje
         </Link>
       </section>
-      <PracticeSection />
-      <section className="section product-section">
-        <div className="section-heading">
-          <div>
-            <Eyebrow>WYBRANE Z KATALOGU</Eyebrow>
-            <h2>Przyjrzyj się możliwościom.</h2>
-          </div>
-          <Link className="button outline" href="/katalog">
-            Cały katalog
-          </Link>
+      <section className="experience-band" aria-label="Doświadczenie Praiston">
+        <div className="experience-number">
+          <strong>35<span>+</span></strong>
+          <small>LAT NA RYNKU</small>
         </div>
-        <div className="product-grid">
-          {featured.map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
+        <div>
+          <span>RODZINNA FIRMA. OD 1989 ROKU.</span>
+          <h2>Doświadczenie, które pracuje dla Twojej placówki.</h2>
         </div>
+        <Link href="/o-nas" className="button outline">
+          Poznaj naszą historię
+        </Link>
       </section>
+      <PracticeSection />
       <section className="support-section">
         <div className="support-story">
           <span className="support-kicker">PRAISTON / TWÓJ PARTNER</span>
@@ -267,19 +280,6 @@ export default function Home() {
       <EditorialSections />
       <NewsSection />
       <FaqSection />
-      <section className="experience-band" aria-label="Doświadczenie Praiston">
-        <div className="experience-number">
-          <strong>35<span>+</span></strong>
-          <small>LAT NA RYNKU</small>
-        </div>
-        <div>
-          <span>RODZINNA FIRMA. OD 1989 ROKU.</span>
-          <h2>Doświadczenie, które pracuje dla Twojej placówki.</h2>
-        </div>
-        <Link href="/o-nas" className="button outline">
-          Poznaj naszą historię
-        </Link>
-      </section>
     </>
   );
 }

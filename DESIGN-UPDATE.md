@@ -107,3 +107,10 @@ Pełne ustalenia i priorytety: AUDYT-UX.md. Naprawiono przekazywanie telefonu i 
 - Blok doświadczenia ma niebieski panel liczby, wspólne osie wyrównania i jednokolumnowy, wyśrodkowany układ mobilny.
 - Białe tło zdjęć w kartach produktów, galerii i miniaturach; zachowane oryginalne zdjęcia i kolory sprzętu.
 - Bez publikacji online. Weryfikacja wizualna w przeglądarce pozostaje do wykonania.
+
+
+## Kolejność sekcji — 21.10.2026
+- Produkty przeniesiono bezpośrednio pod pasek korzyści pod hero.
+- Za produktami: producenci, następnie kategorie specjalizacji.
+- Blok 35+ lat znajduje się po kategoriach (Meble medyczne), przed sekcją gabinetu.
+- Aktualności pozostają przed FAQ, a wyróżnienia bezpośrednio przy stopce.
