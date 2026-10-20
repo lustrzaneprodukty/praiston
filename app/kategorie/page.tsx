@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { categories, categoryProducts } from "@/lib/catalog";
 import { Breadcrumbs, Eyebrow } from "@/components/ui";
 export const metadata = { title: "Kategorie i specjalizacje" };
@@ -19,7 +18,7 @@ export default function Categories() {
             <h2>
               <span>0{i + 1}</span>
               <Link href={`/kategorie/${root.slug}`}>
-                {root.name} <ArrowUpRight />
+                {root.name} 
               </Link>
             </h2>
             <div>
@@ -29,7 +28,7 @@ export default function Categories() {
                   <Link key={c.id} href={`/kategorie/${c.slug}`}>
                     <span>{c.name}</span>
                     <small>{categoryProducts(c.id).length}</small>
-                    <ArrowUpRight size={16} />
+                    
                   </Link>
                 ))}
             </div>

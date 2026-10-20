@@ -1,57 +1,57 @@
 import Link from "next/link";
 import {
-  ArrowRight,
-  ArrowUpRight,
   ShieldCheck,
   Wrench,
   Activity,
-  Plus,
   ScanLine,
   Armchair,
   Stethoscope,
   HeartPulse,
 } from "lucide-react";
-import { categories, products, featuredProducts, summary } from "@/lib/catalog";
+import { categories, categoryProducts, featuredProducts } from "@/lib/catalog";
 import { Eyebrow, ProductCard, ContactBand } from "@/components/ui";
 import Hero from "@/components/hero";
+import { EditorialSections } from "@/components/editorial";
 import brandAssets from "@/data/brand-assets.json";
 export default function Home() {
   const featured = featuredProducts();
   const roots = categories.filter((c) => !c.parentId);
   const icons = [Stethoscope, ScanLine, HeartPulse, Armchair];
-  const hero =
-    products.find(
-      (p) => p.images[0]?.src && /lampa.*emaled.*(300|500)/i.test(p.name),
-    ) || featured[0];
   return (
     <>
-      <section className="hero">
+      <section className="hero photo-hero">
+        <img
+          className="hero-scene"
+          src="/images/medical-room.webp"
+          alt="Wizualizacja nowoczesnej sali z wyposażeniem medycznym"
+          width="1536"
+          height="1024"
+          fetchPriority="high"
+        />
         <div className="hero-content">
           <Eyebrow>SPRZĘT. WIEDZA. WSPARCIE.</Eyebrow>
           <h1>
-            Technologia
-            <br />w służbie
+            Więcej możliwości.
             <br />
-            <span>medycyny.</span>
+            <span>Lepsza opieka.</span>
           </h1>
           <p>
-            Nowy i rekondycjonowany sprzęt medyczny.
-            <br className="desktop-break" /> Przemyślane rozwiązania dla Twojej
-            praktyki.
+            Wyposażenie, które pomaga Ci robić to, co najważniejsze. Poznaj nowy
+            i rekondycjonowany sprzęt medyczny — od gabinetu po salę operacyjną.
           </p>
           <div className="hero-buttons">
             <Link className="button" href="/katalog">
-              Odkryj naszą ofertę <ArrowUpRight size={20} />
+              Odkryj naszą ofertę
             </Link>
             <Link className="text-link" href="/kontakt">
-              Porozmawiajmy <ArrowRight size={17} />
+              Porozmawiajmy
             </Link>
           </div>
           <div className="hero-footnote">
             <span className="tiny-line" /> DLA TYCH, KTÓRZY DBAJĄ O INNYCH
           </div>
         </div>
-        <Hero product={hero ? summary(hero) : undefined} />
+        <Hero />
       </section>
       <div className="value-strip">
         <div>
@@ -78,9 +78,7 @@ export default function Home() {
             <strong>Jedno miejsce. Wiele możliwości.</strong>
           </span>
         </div>
-        <Link href="/o-nas">
-          Poznaj Praiston <ArrowUpRight size={20} />
-        </Link>
+        <Link href="/o-nas">Poznaj Praiston</Link>
       </div>
       <section className="brand-section" aria-labelledby="brands-title">
         <div className="brand-heading">
@@ -150,19 +148,40 @@ export default function Home() {
               >
                 <div className="category-top">
                   <span>0{i + 1}</span>
-                  <ArrowUpRight size={22} />
                 </div>
-                <Icon className="category-icon" strokeWidth={1} />
+                {(() => {
+                  const options = categoryProducts(c.id);
+                  const preferred = [
+                    /fotel.*teyco/i,
+                    /lampa do wybielania/i,
+                    /stół weterynaryjny/i,
+                    /taboret/i,
+                  ][i];
+                  const sample =
+                    options.find(
+                      (p) => p.images[0]?.src && preferred.test(p.name),
+                    ) || options.find((p) => p.images[0]?.src);
+                  return sample ? (
+                    <img
+                      className="category-product"
+                      src={sample.images[0].src}
+                      alt=""
+                      width="240"
+                      height="180"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Icon className="category-icon" strokeWidth={1} />
+                  );
+                })()}
                 <h3>{c.name}</h3>
-                <span className="category-foot">
-                  Odkryj kategorię <ArrowRight size={16} />
-                </span>
+                <span className="category-foot">Odkryj kategorię</span>
               </Link>
             );
           })}
         </div>
         <Link className="text-link category-all" href="/kategorie">
-          Zobacz wszystkie specjalizacje <Plus size={17} />
+          Zobacz wszystkie specjalizacje
         </Link>
       </section>
       <section className="section product-section">
@@ -172,7 +191,7 @@ export default function Home() {
             <h2>Przyjrzyj się możliwościom.</h2>
           </div>
           <Link className="button outline" href="/katalog">
-            Cały katalog <ArrowUpRight size={18} />
+            Cały katalog
           </Link>
         </div>
         <div className="product-grid">
@@ -213,7 +232,7 @@ export default function Home() {
             </li>
           </ol>
           <Link href="/kontakt" className="text-link">
-            Zacznijmy od rozmowy <ArrowUpRight size={18} />
+            Zacznijmy od rozmowy
           </Link>
         </div>
         <div className="support-copy">
@@ -249,11 +268,11 @@ export default function Home() {
                 <h3>{name}</h3>
                 <span>{desc}</span>
               </div>
-              <ArrowUpRight size={22} />
             </Link>
           ))}
         </div>
       </section>
+      <EditorialSections />
       <ContactBand />
     </>
   );

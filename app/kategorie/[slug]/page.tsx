@@ -58,7 +58,7 @@ export default async function CategoryPage({
         <nav aria-label="Podkategorie" className="category-chips">
           {children.map((c) => (
             <Link key={c.id} href={`/kategorie/${c.slug}`}>
-              {c.name} ↗
+              {c.name}
             </Link>
           ))}
         </nav>

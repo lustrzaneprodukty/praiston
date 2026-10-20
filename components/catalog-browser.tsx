@@ -5,7 +5,6 @@ import {
   Search,
   SlidersHorizontal,
   X,
-  ArrowDown,
   RotateCcw,
 } from "lucide-react";
 import type { Category, Product } from "@/lib/types";
@@ -169,7 +168,7 @@ export default function CatalogBrowser({
         <div className="catalog-help">
           <span className="eyebrow">POTRZEBUJESZ WSPARCIA?</span>
           <h3>Znajdźmy właściwe rozwiązanie.</h3>
-          <a href="tel:+48655270167">+48 65 527 01 67 ↗</a>
+          <a href="tel:+48655270167">+48 65 527 01 67</a>
         </div>
       </aside>
       <div className="catalog-results" aria-busy={deferred !== query}>
@@ -207,7 +206,7 @@ export default function CatalogBrowser({
                   className="button outline"
                   onClick={() => setLimit((l) => l + 24)}
                 >
-                  Pokaż więcej <ArrowDown size={18} />
+                  Pokaż więcej 
                 </button>
               )}
             </div>

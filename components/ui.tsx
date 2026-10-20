@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight, Cross } from "lucide-react";
+import { ChevronRight, Cross } from "lucide-react";
 import type { Product } from "@/lib/types";
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -48,9 +48,6 @@ export function ProductCard({ product }: { product: Product }) {
             <span>Zdjęcie niedostępne</span>
           </div>
         )}
-        <span className="card-arrow">
-          <ArrowUpRight size={20} />
-        </span>
       </Link>
       <div className="product-copy">
         <span className="product-code">
@@ -70,7 +67,7 @@ export function ProductCard({ product }: { product: Product }) {
           className="inquiry-link"
           href={`/zapytanie?produkt=${product.slug}`}
         >
-          Zapytaj o produkt <ArrowUpRight size={15} />
+          Zapytaj o produkt
         </Link>
       </div>
     </article>
@@ -88,7 +85,7 @@ export function ContactBand() {
         </h2>
       </div>
       <Link className="button light" href="/kontakt">
-        Skontaktuj się z nami <ArrowUpRight size={20} />
+        Skontaktuj się z nami
       </Link>
     </section>
   );

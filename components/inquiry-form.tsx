@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 export default function InquiryForm({
   products,
 }: {
@@ -136,7 +136,7 @@ export default function InquiryForm({
           </p>
         )}
         <button className="button" type="submit">
-          Przygotuj podsumowanie zapytania <ArrowUpRight size={19} />
+          Przygotuj podsumowanie zapytania 
         </button>
         {result && (
           <div className="form-result" role="status">
@@ -155,7 +155,7 @@ export default function InquiryForm({
               className="button outline"
               href={`mailto:biuro@praiston.pl?subject=${encodeURIComponent("Zapytanie: " + product)}&body=${encodeURIComponent(result.message + "\n\n" + result.name + "\n" + result.email)}`}
             >
-              Otwórz w swojej poczcie <ArrowUpRight size={16} />
+              Otwórz w swojej poczcie 
             </a>
           </div>
         )}

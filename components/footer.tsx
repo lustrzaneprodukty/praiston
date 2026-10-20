@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./header";
 export default function Footer() {
   return (
@@ -14,9 +13,7 @@ export default function Footer() {
             <br />
             Sprzęt dla profesjonalistów.
           </p>
-          <a href="mailto:biuro@praiston.pl">
-            biuro@praiston.pl <ArrowUpRight size={15} />
-          </a>
+          <a href="mailto:biuro@praiston.pl">biuro@praiston.pl</a>
         </div>
         <div>
           <h3>Odkryj ofertę</h3>

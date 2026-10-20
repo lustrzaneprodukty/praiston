@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 const departments = [
   {
     title: "Sprzedaż krajowa",
@@ -107,7 +107,7 @@ export default function ContactContent() {
           </p>
         </div>
         <Link className="button" href="/zapytanie">
-          Przygotuj zapytanie <ArrowUpRight size={18} />
+          Przygotuj zapytanie 
         </Link>
       </div>
       <div>
@@ -146,7 +146,7 @@ export default function ContactContent() {
             target="_blank"
             rel="noreferrer"
           >
-            Pełne dane firmy ↗
+            Pełne dane firmy
           </a>
         </p>
       </div>

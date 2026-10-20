@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
 import { pages } from "@/lib/catalog";
+import FinanceContent from "@/components/finance-content";
 import ContactContent from "@/components/contact-content";
 import { Breadcrumbs, Eyebrow, ContactBand } from "@/components/ui";
 const aliases: Record<string, string> = {
@@ -42,6 +42,7 @@ export default async function Content({
   if (slug === "oferta") redirect("/katalog");
   const page = pages.find((p) => p.slug === (aliases[slug] || slug));
   if (!page) notFound();
+  if (slug.startsWith("finansowanie")) return <FinanceContent slug={slug} />;
   const news = slug === "aktualnosci";
   const articles = pages.filter((p) => p.sourceUrl.includes("/article/"));
   return (
@@ -66,15 +67,39 @@ export default async function Content({
             </p>
           )}
         </div>
+        {[
+          "o-nas",
+          "serwis",
+          "serwis--utylizacja--uslugi",
+          "skup-sprzetu",
+        ].includes(slug) && (
+          <figure className="inner-editorial-image">
+            <img
+              src={
+                slug === "o-nas"
+                  ? "/images/medical-room.webp"
+                  : "/images/medical-service.webp"
+              }
+              alt="Ilustracja działalności w obszarze wyposażenia medycznego"
+              width="1536"
+              height="1024"
+            />
+            <figcaption>
+              {slug === "o-nas"
+                ? "Przestrzeń dla medycyny. Partner dla Twojej placówki."
+                : "Sprzęt, wiedza i wsparcie w jednym miejscu."}
+            </figcaption>
+          </figure>
+        )}
         {slug === "kontakt" && (
           <div className="contact-cards">
             <div className="contact-card">
               <h2>ZADZWOŃ DO NAS</h2>
-              <a href="tel:+48655270167">+48 65 527 01 67 ↗</a>
+              <a href="tel:+48655270167">+48 65 527 01 67</a>
             </div>
             <div className="contact-card">
               <h2>NAPISZ DO NAS</h2>
-              <a href="mailto:biuro@praiston.pl">biuro@praiston.pl ↗</a>
+              <a href="mailto:biuro@praiston.pl">biuro@praiston.pl</a>
             </div>
           </div>
         )}
@@ -96,7 +121,7 @@ export default async function Content({
                 <h2>{a.title}</h2>
                 <p>{a.paragraphs[0]}</p>
                 <Link className="text-link" href={`/${a.slug}`}>
-                  Czytaj dalej <ArrowUpRight size={16} />
+                  Czytaj dalej
                 </Link>
               </article>
             ))}
@@ -121,7 +146,7 @@ export default async function Content({
                     href="/zapytanie?temat=Zgłoszenie%20serwisowe"
                     className="button"
                   >
-                    Przygotuj zgłoszenie serwisowe <ArrowUpRight size={18} />
+                    Przygotuj zgłoszenie serwisowe
                   </Link>
                 </p>
               )}
@@ -134,7 +159,7 @@ export default async function Content({
                     .filter((p) => p.slug.startsWith("finansowanie-"))
                     .map((p) => (
                       <Link key={p.slug} href={`/${p.slug}`}>
-                        {p.title} ↗
+                        {p.title}
                       </Link>
                     ))}
                 </nav>
@@ -162,13 +187,13 @@ export default async function Content({
                 ))}
               {slug === "kontakt" && (
                 <Link href="/zapytanie" className="button">
-                  Przygotuj zapytanie <ArrowUpRight size={18} />
+                  Przygotuj zapytanie
                 </Link>
               )}
               <details className="source-detail">
                 <summary>Materiały źródłowe</summary>
                 <a href={page.sourceUrl} target="_blank" rel="noreferrer">
-                  Zobacz treść w obecnym serwisie Praiston ↗
+                  Zobacz treść w obecnym serwisie Praiston
                 </a>
               </details>
             </article>

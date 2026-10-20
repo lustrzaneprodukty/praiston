@@ -2,13 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
-import { ArrowUpRight, ChevronDown, Menu, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 export function Logo() {
-  return (
-    <span className="logo">
-      praiston<span className="logo-mark">✳</span>
-    </span>
-  );
+  return <span className="logo">praiston</span>;
 }
 export default function Header({
   categories = [],
@@ -28,9 +24,7 @@ export default function Header({
     <>
       <div className="topbar">
         <span>Sprzęt medyczny. Nowy i rekondycjonowany.</span>
-        <a href="tel:+48655270167">
-          Porozmawiajmy: +48 65 527 01 67 <ArrowUpRight size={12} />
-        </a>
+        <a href="tel:+48655270167">Porozmawiajmy: +48 65 527 01 67</a>
       </div>
       <header
         className="header"
@@ -66,7 +60,7 @@ export default function Header({
               <div className="offer-menu-heading">
                 <span className="eyebrow">POZNAJ NASZĄ OFERTĘ</span>
                 <Link href="/katalog" onClick={close}>
-                  Cały katalog <ArrowUpRight size={16} />
+                  Cały katalog
                 </Link>
               </div>
               <div className="offer-menu-grid">
@@ -78,12 +72,11 @@ export default function Header({
                   >
                     <small>0{i + 1}</small>
                     <strong>{c.name}</strong>
-                    <ArrowUpRight size={20} />
                   </Link>
                 ))}
               </div>
               <Link className="offer-all" href="/kategorie" onClick={close}>
-                Wszystkie kategorie i specjalizacje ↗
+                Wszystkie kategorie i specjalizacje
               </Link>
             </div>
           )}
@@ -118,7 +111,7 @@ export default function Header({
             {search ? <X size={20} /> : <Search size={20} />}
           </button>
           <Link className="button small header-contact" href="/kontakt">
-            Kontakt <ArrowUpRight size={16} />
+            Kontakt
           </Link>
           <button
             className="icon-button menu-toggle"
@@ -131,10 +124,7 @@ export default function Header({
         </div>
       </header>
       {search && (
-        <form
-          className="header-search"
-          action="/katalog"
-        >
+        <form className="header-search" action="/katalog">
           <label htmlFor="global-search">Czego szukasz?</label>
           <input
             autoFocus

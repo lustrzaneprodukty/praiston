@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, FileDown, Phone, ShieldCheck } from "lucide-react";
+import { FileDown, Phone, ShieldCheck } from "lucide-react";
 import { products, categories } from "@/lib/catalog";
 import Gallery from "@/components/gallery";
 import { Breadcrumbs, ProductCard, Eyebrow } from "@/components/ui";
@@ -63,7 +63,7 @@ export default async function ProductPage({
             className="button product-cta"
             href={`/zapytanie?produkt=${p.slug}`}
           >
-            Zapytaj o ten produkt <ArrowUpRight size={21} />
+            Zapytaj o ten produkt 
           </Link>
           <a className="product-phone" href="tel:+48655270167">
             <Phone size={17} /> Porozmawiaj ze specjalistą{" "}
@@ -130,7 +130,7 @@ export default async function ProductPage({
                 >
                   <FileDown size={18} />
                   {d.name}
-                  <ArrowUpRight size={18} />
+                  
                 </a>
               ))
             ) : (
@@ -144,7 +144,7 @@ export default async function ProductPage({
               i wyposażenie wymagają potwierdzenia.
             </p>
             <a href={p.sourceUrl} target="_blank" rel="noreferrer">
-              Zobacz oryginalną kartę ↗
+              Zobacz oryginalną kartę
             </a>
           </details>
         </div>
